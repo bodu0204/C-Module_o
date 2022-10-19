@@ -6,15 +6,15 @@
 
 class ClapTrap
 {
-private:
+protected:
     std::string name;
     unsigned int hp;
     unsigned int ep;
     unsigned int ad;
 public:
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
+    virtual void attack(const std::string& target);
+    virtual void takeDamage(unsigned int amount);
+    virtual void beRepaired(unsigned int amount);
     ClapTrap();
     ClapTrap(ClapTrap const &C);
     ClapTrap &operator=(ClapTrap const &C);

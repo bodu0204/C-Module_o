@@ -1,13 +1,36 @@
-#include "Fixed.hpp"
+#include "FragTrap.hpp"
 
-int main( void ) 
+using namespace std;
+int main(void)
 {
-  Fixed a;
-  Fixed b( a );
-  Fixed c;
-  c = b;
-  std::cout << a.getRawBits() << std::endl;
-  std::cout << b.getRawBits() << std::endl;
-  std::cout << c.getRawBits() << std::endl;
-return 0; 
+    FragTrap s("A", 10, 10, 0);
+
+    while (true)
+    {
+        string str;
+        cin >> str;
+        if(str == "attack")
+        {
+            cin >> str;
+            s.attack(str);
+        }
+        else if (str == "damage")
+        {
+            int i;
+            cin >> i;
+            s.takeDamage(i);
+        }
+        else if (str == "repaired")
+        {
+            int i;
+            cin >> i;
+            s.beRepaired(i);
+        }
+         else if (str == "hi")
+        {
+            s.highFivesGuys();
+        }
+        else
+            break;
+    }
 }

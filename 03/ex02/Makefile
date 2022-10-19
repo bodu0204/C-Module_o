@@ -1,7 +1,7 @@
 CC		= g++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 TARGET	= a.out
-SRCS	= main.cpp Fixed.cpp 
+SRCS	= main.cpp ClapTrap.cpp FragTrap.cpp
 
 all	: $(TARGET)
 
