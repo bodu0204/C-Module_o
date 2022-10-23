@@ -24,26 +24,36 @@ void PhoneBook::add(void)
     std::string str;
     do
     {
+        if (std::cin.eof())
+            return ;
         std::cout << "input first name:";
         std::cin >> str;
     } while (c[idx(l - 1)].set_first_name(str));
     do
     {
+        if (std::cin.eof())
+            return ;
         std::cout << "input last name:";
         std::cin >> str;
     } while (c[idx(l - 1)].set_last_name(str));
     do
     {
+        if (std::cin.eof())
+            return ;
         std::cout << "input nickname:";
         std::cin >> str;
     } while (c[idx(l - 1)].set_nickname(str));
     do
     {
+        if (std::cin.eof())
+            return ;
         std::cout << "input phone number:";
         std::cin >> str;
     } while (c[idx(l - 1)].set_phone_number(str));
     do
     {
+        if (std::cin.eof())
+            return ;
         std::cout << "input darkest secret:";
         std::cin >> str;
     } while (c[idx(l - 1)].set_darkest_secret(str));
@@ -73,6 +83,8 @@ void PhoneBook::search(void)
     size_t i;
     do
     {
+        if (std::cin.eof())
+            return ;
         std::cout << "input index number:";
         std::string s;
         std::cin >> s;
