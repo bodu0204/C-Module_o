@@ -11,7 +11,7 @@ private:
     Contact c[MAX_CONTACTS];
     size_t s;
     size_t l;
-    Contact &operator[](size_t);
+    size_t idx(size_t);
     void print_ten(std::string);
 public:
     PhoneBook(){s = 0LU;l = 0LU;}

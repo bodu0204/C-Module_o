@@ -12,3 +12,5 @@ clean	:
 
 fclean	: clean
 	rm -f $(OBJS) $(TARGET)
+
+re		: fclean all

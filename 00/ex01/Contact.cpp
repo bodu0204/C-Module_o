@@ -30,11 +30,9 @@ int Contact::set_phone_number(std::string pnumber)
 		return 1;
 	for (size_t i = 0; i < pnumber.length(); i++)
 	{
-std::cout<<pnumber[i];
 		if (isdigit(phone_number[i]))
 			return 1;
 	}
-std::cout<<"TES\n";
 	phone_number = pnumber;
 	return 0;
 }

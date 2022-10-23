@@ -11,4 +11,6 @@ $(TARGET)	: $(SRCS)
 clean	:
 
 fclean	: clean
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(TARGET)
+
+re		: fclean all
