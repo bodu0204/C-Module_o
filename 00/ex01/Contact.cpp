@@ -30,7 +30,7 @@ int Contact::set_phone_number(std::string pnumber)
 		return 1;
 	for (size_t i = 0; i < pnumber.length(); i++)
 	{
-		if (isdigit(phone_number[i]))
+		if (!isdigit(pnumber.c_str()[i]))
 			return 1;
 	}
 	phone_number = pnumber;
