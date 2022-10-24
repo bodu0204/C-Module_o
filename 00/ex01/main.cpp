@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctype.h>
 #include "PhoneBook.hpp"
-#include "../../debug.h"
+
 int main (void)
 {
     PhoneBook p;
