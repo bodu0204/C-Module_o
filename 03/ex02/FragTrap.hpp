@@ -4,7 +4,7 @@ class FragTrap : public ClapTrap
 {
 private:
     
-public:
+public:04
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);

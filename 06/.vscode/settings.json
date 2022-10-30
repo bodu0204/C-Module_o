@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "exception": "cpp",
         "__bit_reference": "cpp",
         "__bits": "cpp",
         "__config": "cpp",
@@ -33,7 +34,6 @@
         "ctime": "cpp",
         "cwchar": "cpp",
         "cwctype": "cpp",
-        "exception": "cpp",
         "initializer_list": "cpp",
         "ios": "cpp",
         "iosfwd": "cpp",
@@ -60,6 +60,13 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "unistd.h": "c"
+        "iterator": "cpp",
+        "deque": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "stack": "cpp",
+        "random": "cpp",
+        "numeric": "cpp",
+        "strstream": "cpp"
     }
 }

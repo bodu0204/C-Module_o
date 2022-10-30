@@ -31,7 +31,7 @@ Brain const *Dog::get_brainp() const
 
 Dog const &Dog::operator=(Dog const &c)
 {
-    static_cast<Animal>(*this) = static_cast<Animal>(c);
+    this->type = c.getType();
     delete this->b;
     this->b = new Brain(*(c.b));
     return (*this);
@@ -40,7 +40,7 @@ Dog const &Dog::operator=(Dog const &c)
 Dog::Dog(Dog const &c)
 {
     std::cout << "Dog constructor was called." << std::endl;
-    static_cast<Animal>(*this) = static_cast<Animal>(c);
+    this->type = c.getType();
     this->b = new Brain(*(c.b));
 }
 

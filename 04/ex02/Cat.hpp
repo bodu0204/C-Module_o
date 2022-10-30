@@ -31,7 +31,7 @@ Brain const *Cat::get_brainp() const
 
 Cat const &Cat::operator=(Cat const &c)
 {
-    static_cast<Animal>(*this) = static_cast<Animal>(c);
+    this->type = c.getType();
     delete this->b;
     this->b = new Brain(*(c.b));
     return (*this);
@@ -40,7 +40,7 @@ Cat const &Cat::operator=(Cat const &c)
 Cat::Cat(Cat const &c)
 {
     std::cout << "Cat constructor was called." << std::endl;
-    static_cast<Animal>(*this) = static_cast<Animal>(c);
+    this->type = c.getType();
     this->b = new Brain(*(c.b));
 }
 
