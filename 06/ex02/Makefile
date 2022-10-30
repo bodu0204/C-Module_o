@@ -1,7 +1,7 @@
 CC		= g++
 CFLAGS	= -Wall -Wextra -Werror  -std=c++98
 TARGET	= a.out
-SRCS	= main.cpp
+SRCS	= main.cpp Identify.cpp Base.cpp
 
 all	: $(TARGET)
 
@@ -12,4 +12,5 @@ clean	:
 
 fclean	: clean
 	rm -f $(OBJS) $(TARGET)
-#
+
+re	: fclean all

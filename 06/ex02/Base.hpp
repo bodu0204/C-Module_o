@@ -8,12 +8,7 @@
 class Base
 {    
 public:
-    virtual void iam();
+    virtual ~Base();
 };
-
-void Base::iam()
-{
-    std::cout<<"Base class" << std::endl;
-}
 
 #endif
