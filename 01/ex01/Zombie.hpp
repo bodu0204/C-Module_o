@@ -11,7 +11,7 @@ public:
     ~Zombie();
     void set_name(std::string);
     void announce(void);
-    static Zombie* zombieHorde(int, std::string);
 };
+Zombie* zombieHorde(int, std::string);
 
 #endif

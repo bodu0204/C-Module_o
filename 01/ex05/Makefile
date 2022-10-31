@@ -1,4 +1,4 @@
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 TARGET	= Harl_2.0
 SRCS	= main.cpp Harl.cpp

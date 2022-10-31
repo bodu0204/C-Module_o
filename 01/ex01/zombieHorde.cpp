@@ -1,6 +1,6 @@
 #include "./Zombie.hpp"
 
-Zombie* Zombie::zombieHorde(int n, std::string name)
+Zombie* zombieHorde(int n, std::string name)
 {
     if(n <= 0)
         return NULL;

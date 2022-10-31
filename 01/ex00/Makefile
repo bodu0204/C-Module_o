@@ -1,4 +1,4 @@
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 TARGET	= BraiiiiiiinnnzzzZ
 SRCS	= main.cpp Zombie.cpp randomChump.cpp newZombie.cpp

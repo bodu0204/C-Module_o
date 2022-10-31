@@ -3,7 +3,7 @@
 
 int main()
 {
-    Zombie* z = Zombie::zombieHorde(32, "zombie");
+    Zombie* z = zombieHorde(32, "zombie");
     
     for (size_t i = 0; i < 32; i++)
         z[i].announce();
