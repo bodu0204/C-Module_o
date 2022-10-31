@@ -6,7 +6,7 @@ int main() {
     std::string str;
     Harl h;
     std::cin >> str;    
-    while (!(str.empty()))
+    while (!std::cin.eof())
     {
         h.complain(str);
         std::cin >> str;

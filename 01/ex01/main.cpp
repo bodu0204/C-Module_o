@@ -1,10 +1,8 @@
 #include <string>
 #include "./Zombie.hpp"
 
-int main(int argc, char *argv[])
+int main()
 {
-    (void)argc;
-    (void)argv;
     Zombie* z = Zombie::zombieHorde(32, "zombie");
     
     for (size_t i = 0; i < 32; i++)

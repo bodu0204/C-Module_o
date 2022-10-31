@@ -1,4 +1,5 @@
-#include "./Zombie.hpp"
+#include "Zombie.hpp"
+#include <iostream>
 Zombie::Zombie(void)
 {
     this->name = "zombie";

@@ -3,20 +3,17 @@
 #include <ios>
 #include <iostream>
 #include <limits>
-#include "debug.h"
 
-int main() 
+int main(int argc, char *argv[]) 
 {
-    std::string filename;
-    std::string s1;
-    std::string s2;
-
-    std::cin >> filename >> s1 >> s2;
-    if(std::cin.fail())
+    if (argc != 4)
     {
-        std::cout << "read error" << std::endl;
-        return (0);
+        std::cout << "arg error" << std::endl;
+        return 0;
     }
+    std::string filename(argv[1]);
+    std::string s1(argv[2]);
+    std::string s2(argv[3]);
     std::fstream f;
     f.open(filename, std::ios_base::in);
     std::string data;
@@ -26,14 +23,14 @@ int main()
         f.get(c);
         if(!f.fail() || !f.eof())
             data += c;
-        if (data.rfind(s1) != SIZE_T_MAX)
+        if (data.rfind(s1) == data.length() - s1.length())
         {
             data = data.substr(0, data.length() - s1.length());
             data += s2;
         }
     }
     f.close();
-    f.open(filename, std::ios_base::out);
+    f.open(filename + ".replace", std::ios_base::out);
     f << data;
     f.close();
     return 0; 

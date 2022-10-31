@@ -10,8 +10,9 @@ public:
     Zombie(std::string);
     ~Zombie();
     void announce(void);
-    static Zombie* newZombie(std::string);
-    static void randomChump(std::string);
+    void randomChump(std::string);
 };
+
+Zombie* newZombie(std::string);
 
 #endif

@@ -14,10 +14,7 @@ Zombie::Zombie(std::string name)
 #include <iostream>
 
 Zombie::~Zombie()
-{
-    std::cout << this->name << " destructor called." << std::endl;
-    return ;
-}
+{}
 
 void Zombie::set_name(std::string name)
 {
