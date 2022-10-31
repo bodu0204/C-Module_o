@@ -1,4 +1,4 @@
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 TARGET	= a.out
 SRCS	= main.cpp Fixed.cpp 
@@ -12,3 +12,4 @@ clean	:
 
 fclean	: clean
 	rm -f $(OBJS) $(TARGET)
+re : fclean all
