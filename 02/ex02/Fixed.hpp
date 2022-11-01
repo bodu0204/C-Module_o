@@ -7,7 +7,7 @@
 class Fixed
 {
 private:
-	unsigned int num;
+	int num;
 	unsigned int position;
 
 public:

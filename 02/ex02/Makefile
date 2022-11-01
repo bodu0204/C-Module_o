@@ -1,6 +1,6 @@
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
-TARGET	= a.out
+TARGET	= Now_we_re_talking
 SRCS	= main.cpp Fixed.cpp 
 
 all	: $(TARGET)

@@ -1,6 +1,6 @@
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
-TARGET	= a.out
+TARGET	= Serena_my_love
 SRCS	= main.cpp ClapTrap.cpp ScavTrap.cpp
 
 all	: $(TARGET)
@@ -12,3 +12,5 @@ clean	:
 
 fclean	: clean
 	rm -f $(OBJS) $(TARGET)
+
+re : fclean all

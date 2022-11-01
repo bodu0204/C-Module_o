@@ -1,7 +1,7 @@
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
-TARGET	= Aaaaand_OPEN
-SRCS	= main.cpp ClapTrap.cpp
+TARGET	= a.out
+SRCS	= main.cpp
 
 all	: $(TARGET)
 
@@ -13,4 +13,4 @@ clean	:
 fclean	: clean
 	rm -f $(OBJS) $(TARGET)
 
-re : fclean all
+re	: fclean all

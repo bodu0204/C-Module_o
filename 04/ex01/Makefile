@@ -1,7 +1,7 @@
-CC		= g++
+CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 TARGET	= a.out
-SRCS	= main.cpp
+SRCS	= main.cpp Animal.cpp Brain.cpp Cat.cpp Dog.cpp
 
 all	: $(TARGET)
 
@@ -12,3 +12,5 @@ clean	:
 
 fclean	: clean
 	rm -f $(OBJS) $(TARGET)
+
+re : fclean all

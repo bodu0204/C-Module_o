@@ -40,8 +40,7 @@ void FragTrap::highFivesGuys()
 }
 FragTrap::FragTrap():ClapTrap("no-name", 100, 50, 20)
 {
-    std::cout << "FragTrap was made." << std::endl
-    << "[WARNING] not initialized FragTrap class." << std::endl;
+    std::cout << "FragTrap was made." << std::endl;
     return ;
 }
 

@@ -1,6 +1,6 @@
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
-TARGET	= a.out
+TARGET	= My_First_Class_in_Orthodox_Canonical_Form
 SRCS	= main.cpp Fixed.cpp 
 
 all	: $(TARGET)

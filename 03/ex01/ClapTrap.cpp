@@ -35,8 +35,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "ClapTrap was made." << std::endl
-    << "[WARNING] not initialized ClapTrap class." << std::endl;
+    std::cout << "ClapTrap was made." << std::endl;
     return ;
 }
 
