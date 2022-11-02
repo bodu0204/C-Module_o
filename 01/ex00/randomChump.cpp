@@ -1,9 +1,9 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-void Zombie::randomChump(std::string zombie_name)
+void randomChump(std::string zombie_name)
 {
-    this->name = zombie_name;
-    std::cout<<"My name is "<< this->name << std::endl;
+    Zombie z("randomChump_zombie");
+    std::cout<<"My name is "<< z.get_name() << std::endl;
     return ;
 }

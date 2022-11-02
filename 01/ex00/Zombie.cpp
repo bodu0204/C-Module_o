@@ -1,5 +1,10 @@
 #include "Zombie.hpp"
 #include <iostream>
+std::string Zombie::get_name(void)
+{
+    return (this->name);
+}
+
 Zombie::Zombie(void)
 {
     this->name = "zombie";

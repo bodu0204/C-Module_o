@@ -17,11 +17,11 @@ int main(int argc, char *argv[])
     std::fstream f;
     f.open(filename, std::ios_base::in);
     std::string data;
-    while (!f.fail() || !f.eof())
+    while (!f.fail() && !f.eof())
     {
         char c;
         f.get(c);
-        if(!f.fail() || !f.eof())
+        if(!f.fail() && !f.eof())
             data += c;
         if (data.rfind(s1) == data.length() - s1.length())
         {
