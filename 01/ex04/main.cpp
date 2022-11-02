@@ -4,6 +4,8 @@
 #include <iostream>
 #include <limits>
 
+#include "../../debug.h"
+
 int main(int argc, char *argv[]) 
 {
     if (argc != 4)
@@ -16,11 +18,11 @@ int main(int argc, char *argv[])
     std::string s2(argv[3]);
     std::fstream f;
     f.open(filename, std::ios_base::in);
-    std::string data;
+    std::string data = "";
+    char c;
+    f.get(c);
     while (!f.fail() && !f.eof())
     {
-        char c;
-        f.get(c);
         if(!f.fail() && !f.eof())
             data += c;
         if (data.rfind(s1) == data.length() - s1.length())
@@ -28,6 +30,7 @@ int main(int argc, char *argv[])
             data = data.substr(0, data.length() - s1.length());
             data += s2;
         }
+        f.get(c);
     }
     f.close();
     f.open(filename + ".replace", std::ios_base::out);
