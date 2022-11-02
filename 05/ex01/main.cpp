@@ -1,7 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-//using namespace std;
 int main() {
     while (1)
     {

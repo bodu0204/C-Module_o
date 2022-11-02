@@ -1,4 +1,3 @@
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 std::ostream &operator<<(std::ostream &os, Form const &f)
@@ -12,7 +11,6 @@ std::ostream &operator<<(std::ostream &os, Form const &f)
 
 const char* Form::GradeTooHighException::what() const _NOEXCEPT{return "Form::GradeTooHighException";}
 const char* Form::GradeTooLowException::what() const _NOEXCEPT{return "Form::GradeTooLowException";}
-const char* Form::NoSignException::what() const _NOEXCEPT{return "Form::NoSignException";}
 
 std::string Form::getName() const{return this->name;}
 bool Form::getSign() const{return this->sign;}
@@ -29,14 +27,6 @@ void Form::beSigned(Bureaucrat const &b)
         this->sign = true;
     }
     else
-        throw GradeTooLowException();
-}
-
-void Form::execute(Bureaucrat const &b) const
-{
-    if (!this->sign)
-        throw NoSignException();
-    else if (b.getGrade() > this->grade_e)
         throw GradeTooLowException();
 }
 

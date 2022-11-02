@@ -1,6 +1,5 @@
 #include "Bureaucrat.hpp"
 
-//using namespace std;
 int main() {
     while (1)
     {
@@ -18,7 +17,7 @@ int main() {
             {
                 for (size_t j = 0; j < (size_t)-i; j++)
                 {
-                    std::cout<<b.getName()<<":"<<b.getGrade()<<std::endl;
+                    std::cout<<b<<std::endl;
                     --b;
                 }
             }
@@ -26,11 +25,11 @@ int main() {
             {
                 for (size_t j = 0; j < (size_t)i; j++)
                 {
-                    std::cout<<b.getName()<<":"<<b.getGrade()<<std::endl;
+                    std::cout<<b<<std::endl;
                     ++b;
                 }
             }
-            std::cout<<b.getName()<<":"<<b.getGrade()<<std::endl;
+            std::cout<<b<<std::endl;
         }
         catch(const std::exception& e)
         {

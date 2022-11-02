@@ -1,4 +1,3 @@
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat const &b)
@@ -10,11 +9,6 @@ std::ostream &operator<<(std::ostream &os, Bureaucrat const &b)
 
 const char* Bureaucrat::GradeTooHighException::what() const _NOEXCEPT{return "Bureaucrat::GradeTooHighException";}
 const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT{return "Bureaucrat::GradeTooLowException";}
-
-void Bureaucrat::executeForm(Form const &f)
-{
-    f.execute(*this);
-}
 
 std::string Bureaucrat::getName() const{return this->name;}
 unsigned Bureaucrat::getGrade() const{return this->grade;}
@@ -79,4 +73,3 @@ Bureaucrat const &Bureaucrat::operator=(Bureaucrat const &b)
 }
 
 Bureaucrat::~Bureaucrat(){}
-
