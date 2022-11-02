@@ -1,5 +1,6 @@
 #include "Zombie.hpp"
 #include <iostream>
+#include <string>
 
 void randomChump(std::string zombie_name)
 {
