@@ -38,7 +38,7 @@ void FragTrap::highFivesGuys()
     std::cout << "HI🖐" << std::endl;
     return ;
 }
-FragTrap::FragTrap():ClapTrap("no-name", 100, 50, 20)
+FragTrap::FragTrap():ClapTrap("no-name", 100, 100, 30)
 {
     std::cout << "FragTrap was made." << std::endl;
     return ;

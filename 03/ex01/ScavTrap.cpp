@@ -40,8 +40,7 @@ void ScavTrap::guardGate()
 }
 ScavTrap::ScavTrap():ClapTrap("no-name", 100, 50, 20)
 {
-    std::cout << "ScavTrap was made." << std::endl
-    << "[WARNING] not initialized ScavTrap class." << std::endl;
+    std::cout << "ScavTrap was made." << std::endl;
     return ;
 }
 

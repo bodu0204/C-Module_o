@@ -33,7 +33,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     return ;
 }
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap():name("no-name"),hp(10),ep(10),ad(0)
 {
     std::cout << "ClapTrap was made." << std::endl;
     return ;
@@ -42,10 +42,7 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap(ClapTrap const &C)
 {
     std::cout << "ClapTrap was copied." << std::endl;
-    this->name = C.name;
-    this->hp = C.hp;
-    this->ep = C.ep;
-    this->ad = C.ad;
+    *this = C;
     return ;
 }
 

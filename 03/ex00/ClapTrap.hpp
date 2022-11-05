@@ -18,7 +18,7 @@ public:
     ClapTrap();
     ClapTrap(ClapTrap const &C);
     ClapTrap &operator=(ClapTrap const &C);
-    ClapTrap(std::string name, int hp, int ep, int ap);
+    ClapTrap(std::string name, int hp, int ep, int ad);
     ~ClapTrap();
 };
 
