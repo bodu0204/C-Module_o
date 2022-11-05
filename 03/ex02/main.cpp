@@ -3,7 +3,7 @@
 using namespace std;
 int main(void)
 {
-    FragTrap s("A", 10, 10, 0);
+    FragTrap s("F");
 
     while (true)
     {

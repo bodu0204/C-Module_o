@@ -56,7 +56,7 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &C)
     return (*this);
 }
 
-ClapTrap::ClapTrap(std::string name, int hp, int ep, int ad)
+ClapTrap::ClapTrap(std::string name, int hp = 10, int ep = 10, int ad = 0)
 {
     std::cout << "ClapTrap was made." << std::endl;
     this->name = name;

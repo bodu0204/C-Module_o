@@ -3,7 +3,7 @@
 using namespace std;
 int main(void)
 {
-    ScavTrap s("A", 10, 10, 0);
+    ScavTrap s("A");
 
     while (true)
     {

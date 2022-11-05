@@ -3,7 +3,7 @@
 using namespace std;
 int main(void)
 {
-    ClapTrap c("A", 10, 10, 0);
+    ClapTrap c("C", 10, 10, 0);
 
     while (true)
     {
