@@ -7,6 +7,8 @@ int main(int argc , char *argv[]) {
     (void) argc;
     (void) argv;
     Animal *ap[10];
+    /* Animal A;
+    (void) A; */
 
     for (size_t i = 0; i < 10; i++)
     {

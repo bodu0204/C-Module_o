@@ -1,6 +1,5 @@
 {
     "files.associations": {
-        "exception": "cpp",
         "__bit_reference": "cpp",
         "__bits": "cpp",
         "__config": "cpp",
@@ -34,6 +33,8 @@
         "ctime": "cpp",
         "cwchar": "cpp",
         "cwctype": "cpp",
+        "deque": "cpp",
+        "exception": "cpp",
         "initializer_list": "cpp",
         "ios": "cpp",
         "iosfwd": "cpp",
@@ -48,6 +49,7 @@
         "ostream": "cpp",
         "ratio": "cpp",
         "sstream": "cpp",
+        "stack": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "string": "cpp",
@@ -61,12 +63,7 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "iterator": "cpp",
-        "deque": "cpp",
-        "fstream": "cpp",
-        "iomanip": "cpp",
-        "stack": "cpp",
-        "random": "cpp",
-        "numeric": "cpp",
-        "strstream": "cpp"
+        "functional": "cpp",
+        "*.tpp": "cpp"
     }
 }
