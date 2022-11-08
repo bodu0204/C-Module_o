@@ -11,10 +11,13 @@ Form *Intern::makeForm(std::string name, std::string terget)
     switch (s)
     {
     case 1:
+        std::cout<<"Intern creates RobotomyRequestForm"<<std::endl;
         return (new RobotomyRequestForm(terget));    
     case 2:
+        std::cout<<"Intern creates PresidentialPardonForm"<<std::endl;
         return (new PresidentialPardonForm(terget));    
     case 3:
+        std::cout<<"Intern creates ShrubberyCreationForm"<<std::endl;
         return (new ShrubberyCreationForm(terget));    
     default:
         throw NoForm();
