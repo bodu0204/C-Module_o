@@ -5,7 +5,7 @@ void Bureaucrat::signForm(Form &f)
 {
     if (f.getSign())
     {
-        std::cout << this->name << "couldn\'t sign "<< f.getName() <<" because it's signed." << std::endl;
+        std::cout << this->name << " couldn\'t sign "<< f.getName() <<" because it's signed." << std::endl;
         return ;
     }
     else
