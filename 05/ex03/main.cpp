@@ -2,40 +2,35 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main() {
-    while (1)
+    while (true)
     {
         try
         {
             std::string s;
             unsigned n;
+            Intern i;
 
             std::cout<<"Bureaucrat(name, grade):";std::cin>>s>>n;
-            if (std::cin.eof())
+            if (std::cin.eof() || std::cin.fail())
                 return 0;
             Bureaucrat b(s, n);
-            std::string sn;
-            std::cout<<"ShrubberyCreationForm(name):";std::cin>>sn;
-            if (std::cin.eof())
+
+            std::string na, tr;
+            std::cin.clear();
+            std::cin.ignore();
+            std::cout<<"Intern::makeForm(std::string name, ***):";std::getline(std::cin, na);
+            if (std::cin.eof() || std::cin.fail())
                 return 0;
-            std::string rn;
-            std::cout<<"RobotomyRequestForm(name):";std::cin>>rn;
-            if (std::cin.eof())
+            std::cout<<"Intern::makeForm("<<na<<", std::string terget):";std::getline(std::cin, tr);
+            if (std::cin.eof() || std::cin.fail())
                 return 0;
-            std::string pn;
-            std::cout<<"PresidentialPardonForm(name):";std::cin>>pn;
-            if (std::cin.eof())
-                return 0;
-            ShrubberyCreationForm sf(sn);
-            RobotomyRequestForm rf(rn);
-            PresidentialPardonForm pf(pn);
-            sf.beSigned(b);
-            b.executeForm(sf);
-            rf.beSigned(b);
-            b.executeForm(rf);
-            pf.beSigned(b);
-            b.executeForm(pf);
+            Form *fp = i.makeForm(na, tr);
+
+            fp->beSigned(b);
+            b.executeForm(*fp);
         }
         catch(const std::exception& e)
         {

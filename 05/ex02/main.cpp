@@ -4,7 +4,7 @@
 #include "ShrubberyCreationForm.hpp"
 
 int main() {
-    while (1)
+    while (!std::cin.eof() && !std::cin.fail())
     {
         try
         {
