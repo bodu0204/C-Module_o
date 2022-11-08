@@ -19,7 +19,6 @@ int main() {
             Bureaucrat b(s, n);
 
             std::string na, tr;
-            std::cin.clear();
             std::cin.ignore();
             std::cout<<"Intern::makeForm(std::string name, ***):";std::getline(std::cin, na);
             if (std::cin.eof() || std::cin.fail())

@@ -6,7 +6,7 @@ Form *Intern::makeForm(std::string name, std::string terget)
 {
     unsigned s = 0;
     s += (name == "robotomy request")?1:0;
-    s += (name == "presidential pardonForm")?2:0;
+    s += (name == "presidential pardon")?2:0;
     s += (name == "shrubbery creation")?3:0;
     switch (s)
     {
