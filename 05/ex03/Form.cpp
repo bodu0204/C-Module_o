@@ -21,13 +21,8 @@ unsigned Form::getGradeExecute() const{return this->grade_e;}
 
 void Form::beSigned(Bureaucrat const &b)
 {
-    if (this->sign)
-        std::cout << b.getName() << "couldn\'t sign "<< this->getName() <<" because it's signed." << std::endl;
-    else if (b.getGrade() <= this->grade_s)
-    {
-        std::cout << b.getName() << " signed " << this->getName() <<"." << std::endl;
+    if (b.getGrade() <= this->grade_s)
         this->sign = true;
-    }
     else
         throw GradeTooLowException();
 }

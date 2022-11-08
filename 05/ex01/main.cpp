@@ -20,8 +20,8 @@ int main() {
             if (std::cin.eof() || std::cin.fail())
                 return 0;
             Form f(na, gs, ge);
-            f.beSigned(b);
-            f.beSigned(b);
+            b.signForm(f);
+            b.signForm(f);
         }
         catch(const std::exception& e)
         {

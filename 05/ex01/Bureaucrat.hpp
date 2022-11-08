@@ -4,6 +4,9 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -18,6 +21,7 @@ public:
     class GradeTooLowException :public std::exception{
         const char* what() const _NOEXCEPT;
     };
+    void signForm(Form &);
     std::string getName() const;
     unsigned getGrade() const;
     Bureaucrat &operator++();

@@ -22,6 +22,7 @@ public:
         const char* what() const _NOEXCEPT;
     };
     void executeForm(Form const&);
+    void signForm(Form &);
     std::string getName() const;
     unsigned getGrade() const;
     Bureaucrat &operator++();

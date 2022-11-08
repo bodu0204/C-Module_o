@@ -29,7 +29,7 @@ int main() {
                 return 0;
             Form *fp = i.makeForm(na, tr);
 
-            fp->beSigned(b);
+            b.signForm(*fp);
             b.executeForm(*fp);
         }
         catch(const std::exception& e)

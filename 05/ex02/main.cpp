@@ -30,11 +30,11 @@ int main() {
             ShrubberyCreationForm sf(sn);
             RobotomyRequestForm rf(rn);
             PresidentialPardonForm pf(pn);
-            sf.beSigned(b);
+            b.signForm(sf);
             b.executeForm(sf);
-            rf.beSigned(b);
+            b.signForm(rf);
             b.executeForm(rf);
-            pf.beSigned(b);
+            b.signForm(pf);
             b.executeForm(pf);
         }
         catch(const std::exception& e)
