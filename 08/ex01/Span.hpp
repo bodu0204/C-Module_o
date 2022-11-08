@@ -17,51 +17,21 @@ public:
     };
     Span(size_t);
     void addNumber(int);
+    template <typename iterator_int> void addNumbers(iterator_int, size_t);
     unsigned int shortestSpan();
     unsigned int longestSpan();
     ~Span();
 };
 
-const char* Span::add_over::what() const _NOEXCEPT{return "Span::add_over";}
-
-void Span::addNumber(int i){
-    if (use_size >= max_size)
-        throw Span::add_over();
-    vi[use_size] = i;
-    ++use_size;
-    return ;
-}
-
-unsigned int Span::shortestSpan(){
-    if (use_size < 2)
-        return (0);
-    unsigned int sp = (vi[0] > vi[1])?(vi[0] - vi[1]) : (vi[1] - vi[0]);
-    for (size_t i = 1; i < use_size; ++i)
+template <typename iterator_int>
+void Span::addNumbers(iterator_int arr, size_t len){
+    for (size_t i = 0; i < len; i++)
     {
-        unsigned int spp = (vi[i - 1] > vi[i]) ? (vi[i - 1] - vi[i]) : (vi[i] - vi[i - 1]);
-        if (spp < sp)
-            sp = spp;
+        if (this->use_size >= this->max_size)
+            throw add_over();
+        this->vi[use_size] = arr[i];
+        use_size++;
     }
-    return sp;
 }
-
-unsigned int Span::longestSpan(){
-    if (use_size < 2)
-        return (0);
-    unsigned int lp = (vi[0] > vi[1])?(vi[0] - vi[1]) : (vi[1] - vi[0]);
-    for (size_t i = 1; i < use_size; ++i)
-    {
-        unsigned int lpp = (vi[i - 1] > vi[i]) ? (vi[i - 1] - vi[i]) : (vi[i] - vi[i - 1]);
-        if (lpp > lp)
-            lp = lpp;
-    }
-    return lp;
-}
-
-
-Span::Span()            :vi(0), max_size(0),use_size(0){}
-Span::Span(size_t size) :vi(size), max_size(size),use_size(0){}
-Span::~Span(){}
-
 
 #endif

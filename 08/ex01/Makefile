@@ -1,7 +1,7 @@
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 TARGET	= a.out
-SRCS	= main.cpp
+SRCS	= main.cpp Span.cpp
 
 all	: $(TARGET)
 
