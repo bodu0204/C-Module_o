@@ -10,14 +10,14 @@ int main() {
             unsigned n;
 
             std::cout<<"Bureaucrat(name, grade):";std::cin>>s>>n;
-            if (std::cin.eof())
+            if (std::cin.eof() || std::cin.fail())
                 return 0;
             Bureaucrat b(s, n);
             std::string na;
             unsigned gs;
             unsigned ge;
             std::cout<<"Form(name, grade_sign, grade_execute):";std::cin>>na>>gs>>ge;
-            if (std::cin.eof())
+            if (std::cin.eof() || std::cin.fail())
                 return 0;
             Form f(na, gs, ge);
             f.beSigned(b);

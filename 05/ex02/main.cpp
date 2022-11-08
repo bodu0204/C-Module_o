@@ -4,7 +4,7 @@
 #include "ShrubberyCreationForm.hpp"
 
 int main() {
-    while (!std::cin.eof() && !std::cin.fail())
+    while (true)
     {
         try
         {
@@ -12,20 +12,20 @@ int main() {
             unsigned n;
 
             std::cout<<"Bureaucrat(name, grade):";std::cin>>s>>n;
-            if (std::cin.eof())
+            if (std::cin.eof() || std::cin.fail())
                 return 0;
             Bureaucrat b(s, n);
             std::string sn;
             std::cout<<"ShrubberyCreationForm(name):";std::cin>>sn;
-            if (std::cin.eof())
+            if (std::cin.eof() || std::cin.fail())
                 return 0;
             std::string rn;
             std::cout<<"RobotomyRequestForm(name):";std::cin>>rn;
-            if (std::cin.eof())
+            if (std::cin.eof() || std::cin.fail())
                 return 0;
             std::string pn;
             std::cout<<"PresidentialPardonForm(name):";std::cin>>pn;
-            if (std::cin.eof())
+            if (std::cin.eof() || std::cin.fail())
                 return 0;
             ShrubberyCreationForm sf(sn);
             RobotomyRequestForm rf(rn);
