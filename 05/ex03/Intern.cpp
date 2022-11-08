@@ -2,7 +2,7 @@
 
 const char* Intern::NoForm::what() const _NOEXCEPT{return "Intern::NoForm";}
 
-Form *Intern::makeForm(std::string name, std::string terget)
+Form *Intern::makeForm(std::string name, std::string target)
 {
     unsigned s = 0;
     s += (name == "robotomy request")?1:0;
@@ -12,13 +12,13 @@ Form *Intern::makeForm(std::string name, std::string terget)
     {
     case 1:
         std::cout<<"Intern creates RobotomyRequestForm"<<std::endl;
-        return (new RobotomyRequestForm(terget));    
+        return (new RobotomyRequestForm(target));    
     case 2:
         std::cout<<"Intern creates PresidentialPardonForm"<<std::endl;
-        return (new PresidentialPardonForm(terget));    
+        return (new PresidentialPardonForm(target));    
     case 3:
         std::cout<<"Intern creates ShrubberyCreationForm"<<std::endl;
-        return (new ShrubberyCreationForm(terget));    
+        return (new ShrubberyCreationForm(target));    
     default:
         throw NoForm();
     }

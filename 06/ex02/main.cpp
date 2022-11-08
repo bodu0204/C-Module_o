@@ -6,7 +6,7 @@
 
 int main() {
 
-    char c;
+    std::string s;
 
     do
     {
@@ -20,6 +20,7 @@ int main() {
             delete dynamic_cast<B *>(p);
         else if (dynamic_cast<C *>(p))
             delete dynamic_cast<C *>(p);
-    } while (read(0, &c, 1));
+        std::getline(std::cin, s);
+    } while (!std::cin.eof() && !std::cin.fail());
     return 0;
 }

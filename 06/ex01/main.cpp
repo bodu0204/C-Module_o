@@ -4,9 +4,9 @@
 int main() {
     Data stack(42);
 
-    (void)stack;
-    uintptr_t u = serialize(&stack);
-    std::cout<<"serialize(stack): "<<u<<std::endl;
-    std::cout<<"deserialize(u)->get_i(): "<<deserialize(u)->get_i()<<std::endl;
+    std::cout<<"&stack: "<<&stack<<std::endl;
+    std::cout<<"serialize(stack): "<<std::hex<< serialize(&stack) <<std::endl;
+    std::cout<<"deserialize(serialize(&stack)): "<<deserialize(serialize(&stack))<<std::endl;
+    std::cout<<"deserialize(serialize(&stack))->get_i(): "<<std::dec<<deserialize(serialize(&stack))->get_i()<<std::endl;
     return 0;
 }
