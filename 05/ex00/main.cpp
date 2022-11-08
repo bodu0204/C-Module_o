@@ -7,8 +7,8 @@ int main() {
         unsigned n;
         int i;
 
-        std::cin>>s>>n>>i;
-        if (std::cin.eof())
+        std::cout<< "Bureaucrat b(s, n), inc:";std::cin>>s>>n>>i;
+        if (std::cin.eof() || std::cin.fail())
             break;
         try
         {
