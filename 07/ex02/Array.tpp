@@ -15,6 +15,14 @@ T &Array<T>::operator[](size_t i)
 }
 
 template <typename T>
+T const &Array<T>::operator[](size_t i) const
+{
+    if (i > this->len)
+        throw (std::exception());
+    return (this->arr[i]);
+}
+
+template <typename T>
 Array<T>::Array()
 {
     this->arr = NULL;

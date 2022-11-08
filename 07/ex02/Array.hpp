@@ -11,6 +11,7 @@ private:
 public:
     size_t size() const;
     T &operator[](size_t);
+    T const &operator[](size_t) const;
     Array();
     Array(unsigned int);
     Array(Array<T> &);

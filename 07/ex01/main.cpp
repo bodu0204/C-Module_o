@@ -58,14 +58,14 @@ std::ostream &operator<<(std::ostream &os, some_class const &s)
     return (os);
 }
 
-some_class ten_times (some_class s)
+void print (some_class const &s)
 {
-    return(some_class(s.get_i() * 10));
+    std::cout<<s.get_i()<<std::endl;
 }
 
-int ten_times(int i)
+void print(int const &i)
 {
-    return(i * 10);
+    std::cout<<i<<std::endl;
 }
 
 
@@ -78,12 +78,8 @@ int main() {
         std::cout<<arri[i]<<",";
     }
     std::cout<<std::endl;
-    iter(arri, 5, ten_times);
-    std::cout<< "--iter(arri, 5, ten_times)--" << std::endl;
-    for (size_t i = 0; i < 5; i++)
-    {
-        std::cout<<arri[i]<<",";
-    }
+    std::cout<< "--iter(arri, 5, print)--" << std::endl;
+    iter(arri, 5, print);
     std::cout<<std::endl;
 
     std::cout<< "=========================================" << std::endl;
@@ -94,13 +90,8 @@ int main() {
         std::cout<<arrs[i]<<",";
     }
     std::cout<<std::endl;
-    iter(arrs, 5, ten_times);
-    std::cout<< "--iter(arrs, 5, ten_times)--" << std::endl;
-    for (size_t i = 0; i < 5; i++)
-    {
-        std::cout<<arrs[i]<<",";
-    }
-    std::cout<<std::endl;
+    std::cout<< "--iter(arrs, 5, print)--" << std::endl;
+    iter(arrs, 5, print);
 
     std::cout<< std::endl;
 
