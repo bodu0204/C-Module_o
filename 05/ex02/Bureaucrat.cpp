@@ -33,7 +33,16 @@ const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT{return "Bur
 
 void Bureaucrat::executeForm(Form const &f)
 {
-    f.execute(*this);
+    try
+    {
+        f.execute(*this);
+        std::cout << this->getName() << " executed " << f.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return ;
+    }
 }
 
 std::string Bureaucrat::getName() const{return this->name;}
