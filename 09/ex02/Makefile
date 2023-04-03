@@ -1,6 +1,6 @@
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
-TARGET	= RPN
+TARGET	= PmergeMe
 SRCS	= main.cpp PmergeMe.cpp
 
 all	: $(TARGET)

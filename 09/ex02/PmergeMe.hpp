@@ -1,10 +1,47 @@
 
+//version:2.1.0
+
+#ifndef DEBUG_H
+#define DEBUG_H
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/time.h>
+#define TEST(msg) printf("[(%s/%d) %s ]%s\n", __FILE__, __LINE__, __func__, ((char *)msg)); fflush(stdin);
+#define TEST_(msg) printf("---------------------------------------------[(%s/%d) %s ]%s\n", __FILE__, __LINE__, __func__, ((char *)msg)); fflush(stdin);
+#define TESTn(msg, i) printf("[(%s/%d) %s ]%s:%ld\n", __FILE__, __LINE__, __func__, ((char *)msg), (long)(i)); fflush(stdin);
+#define TESTu(msg, i) printf("[(%s/%d) %s ]%s:%lu\n", __FILE__, __LINE__, __func__, ((char *)msg), (unsigned long)(i)); fflush(stdin);
+#define TESTx(msg, i) printf("[(%s/%d) %s ]%s:%lx\n", __FILE__, __LINE__, __func__, ((char *)msg), (unsigned long)(i)); fflush(stdin);
+#define TESTd(msg, i) printf("[(%s/%d) %s ]%s:%lf\n", __FILE__, __LINE__, __func__, ((char *)msg), (double)(i)); fflush(stdin);
+#define TESTp(msg, i) printf("[(%s/%d) %s ]%s:%p\n", __FILE__, __LINE__, __func__, ((char *)msg), (void *)(i)); fflush(stdin);
+#define TESTs(msg, i) printf("[(%s/%d) %s ]%s:%s\n", __FILE__, __LINE__, __func__, ((char *)msg), (char *)(i)); fflush(stdin);
+#define TESTc(msg, i) printf("[(%s/%d) %s ]%s:%c\n", __FILE__, __LINE__, __func__, ((char *)msg), (char)(i)); fflush(stdin);
+#define Te printf("[(%s/%d) %s ]\n", __FILE__, __LINE__, __func__); fflush(stdin);
+#define Te_ printf("---------------------------------------------[(%s/%d) %s ]\n", __FILE__, __LINE__, __func__); fflush(stdin);
+#define Ten(i) printf("[(%s/%d) %s ]%s:%ld\n", __FILE__, __LINE__, __func__, #i, (long)(i)); fflush(stdin);
+#define Teu(i) printf("[(%s/%d) %s ]%s:%lu\n", __FILE__, __LINE__, __func__, #i, (unsigned long)(i)); fflush(stdin);
+#define Tex(i) printf("[(%s/%d) %s ]%s:%lx\n", __FILE__, __LINE__, __func__, #i, (unsigned long)(i)); fflush(stdin);
+#define Ted(i) printf("[(%s/%d) %s ]%s:%lf\n", __FILE__, __LINE__, __func__, #i, (double)(i)); fflush(stdin);
+#define Tep(i) printf("[(%s/%d) %s ]%s:%p\n", __FILE__, __LINE__, __func__, #i, (void *)(i)); fflush(stdin);
+#define Tes(i) printf("[(%s/%d) %s ]%s:%s\n", __FILE__, __LINE__, __func__, #i, (char *)(i)); fflush(stdin);
+#define Tec(i) printf("[(%s/%d) %s ]%s:%c\n", __FILE__, __LINE__, __func__, #i, (char)(i)); fflush(stdin);
+#define FORn(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (long)(x[i])); fflush(stdin);}printf("\n");}
+#define FORu(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (unsigned long)(x[i])); fflush(stdin);}printf("\n");}
+#define FORx(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (unsigned long)(x[i])); fflush(stdin);}printf("\n");}
+#define FORd(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (double)(x[i])); fflush(stdin);}printf("\n");}
+#define FORp(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (void *)(x[i])); fflush(stdin);}printf("\n");}
+#define FORs(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (char *)(x[i])); fflush(stdin);}printf("\n");}
+#define FORc(x,j) {printf("[(%s/%d) %s ]%s[]:", __FILE__, __LINE__, __func__, #x);for(size_t i = 0; j; i++){printf("%ld,", (char)(x[i])); fflush(stdin);}printf("\n");}
+#define TAKE(i,j) {static size_t test_arg = 0; if(!(test_arg % j)){i} test_arg++;}
+#define STOP {char c; read(STDIN_FILENO, &c, sizeof(char));}
+
+#endif
 #pragma once
 #include <sys/time.h>
 #include <string>
 #include <sstream>
 #include <vector>
-#include <list>
+#include <deque>
+#include <iomanip>
 
 class PmergeMe
 {
@@ -21,59 +58,6 @@ public:
     ~PmergeMe();
 };
 
-PmergeMe::PmergeMe(){}
-PmergeMe::PmergeMe(PmergeMe const &src){*this = src;}
-PmergeMe const &PmergeMe::operator=(PmergeMe const &src){this->result = src.result; return *this;}
-PmergeMe::PmergeMe(int argc, char *argv[])
-{
-    std::stringstream output;
-    std::vector<int>v;
-    std::list<int>l;
-    output << "Before:\t";
-    for (size_t i = 1; i < static_cast<size_t>(argc); i++)
-    {
-        std::string str(argv[i]);
-        int n = 0;
-        for (size_t i = 0; str[i]; i++)
-        {
-            if (n > INT32_MAX / 10)
-            {
-                this->result = "Error";
-                return ;
-            }
-            n *= 10;
-            if (isdigit(str[i]) && !(n == (INT32_MAX / 10) * 10 && str[i] - '0' > INT32_MAX % 10))
-            {
-                n += str[i] - '0';
-            }
-            else
-            {
-                this->result = "Error";
-                return ;
-            }
-        }
-        output << n << " ";
-        v.push_back(n);
-        l.push_back(n);       
-    }
-    double tv, tl;
-    this->time_diff();
-    this->sort(v);
-    tv = this->time_diff();
-    this->sort(l);
-    tl = this->time_diff();
-    output << "\nAfter:\t";
-    for (size_t i = 0; i < v.size(); i++)
-    {
-        output << v[i] << " ";
-    }
-    output << "\n";
-    output << "Time to process a range of " << v.size() << "elements with std::vector<int>\t:\t" << tv / 1000 << " us\n";
-    output << "Time to process a range of " << l.size() << "elements with std::list<int>\t:\t" << tl / 1000 << " us";
-    this->result = output.str();
-    return ;
-}
-
 template <typename T>
 void PmergeMe::sort(T &nms)
 {
@@ -81,14 +65,14 @@ void PmergeMe::sort(T &nms)
     {
         for (size_t i = 1; i < nms.size(); i++)
         {
-            T::iterator it = nms.bigin();
-            for (size_t j = i; j && it[j] < it[j - 1]; j--)
+            for (size_t j = i; j && nms[j] < nms[j - 1]; j--)
             {
-                int tmp = it[j];
-                it[j] = it[j - 1];
-                it[j - 1] = tmp;
+                int tmp = nms[j];
+                nms[j] = nms[j - 1];
+                nms[j - 1] = tmp;
             }
         }
+        return ;
     }
     T a, b;
     a.assign(nms.begin(), nms.begin() + (nms.size() / 2  + nms.size() % 2 - 1));
@@ -96,33 +80,11 @@ void PmergeMe::sort(T &nms)
     b.assign(nms.begin() + (nms.size() / 2 + nms.size() % 2), nms.end());
     sort(b);
     size_t i(0), ai(0), bi(0);
-    T::iterator it = nms.bigin();
-    T::iterator ita = a.bigin();
-    T::iterator itb = b.bigin();
     for (; ai < a.size() && bi< b.size(); i++)
-        it[i] = ita[ai] < itb[bi] ? ita[ai++] : itb[bi++];
+        nms[i] = a[ai] < b[bi] ? a[ai++] : b[bi++];
     for (; ai < a.size(); i++)
-        it[i] = ita[ai++];
-    for (; ai < bi< b.size(); i++)
-        it[i] = itb[bi++];
+        nms[i] = a[ai++];
+    for (; bi< b.size(); i++)
+        nms[i] = b[bi++];
     return ;
 }
-
-double	PmergeMe::time_diff(void)
-{
-	static struct timespec	p = {0};
-	struct timespec			n;
-	unsigned int			sec;
-	int						nsec;
-
-	clock_gettime(CLOCK_REALTIME, &n);
-	sec = n.tv_sec - p.tv_sec;
-	nsec = n.tv_nsec - p.tv_nsec;
-	p = n;
-	return ((double)sec + (double)nsec / (1000 * 1000 * 1000));
-}
-
-std::string PmergeMe::get_result(){return (this->result);}
-
-
-PmergeMe::~PmergeMe(){}
