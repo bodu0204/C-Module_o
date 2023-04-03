@@ -36,34 +36,37 @@ PmergeMe::PmergeMe(int argc, char *argv[])
         v.push_back(n);
         d.push_back(n);       
     }
-    double tv, td;
-    this->time_diff();
-    this->sort(v);
-    tv = this->time_diff();
-    this->sort(d);
-    td = this->time_diff();
+    time tv, td;
+    this->sort(v, tv);
+    this->sort(d, td);
     output << "\nAfter:\t";
     for (size_t i = 0; i < v.size(); i++)
     {
         output << v[i] << " ";
     }
     output << "\n";
-    output << "Time to process a range of " << v.size() << " elements with std::vector<int>\t:\t" << std::setprecision(16) << tv << " us\n";
-    output << "Time to process a range of " << d.size() << " elements with std::deque<int>\t:\t" << std::setprecision(16) << td << " us";
+    output << "Time to process a range of " << v.size() << " elements with std::vector<int>\t:\t" << std::setprecision(4) \
+    << static_cast<double>(tv.ti + tv.tm) / 1000 / 1000 << " us " \
+    << " (i:" << static_cast<double>(tv.ti) / 1000 / 1000 << "," \
+    << "m:" << static_cast<double>(tv.tm) / 1000 / 1000 << ")\n";
+    output << "Time to process a range of " << d.size() << " elements with std::deque<int>\t:\t" << std::setprecision(4) \
+    << static_cast<double>(td.ti + td.tm) / 1000 / 1000 << " us " \
+    << " (i:" << static_cast<double>(td.ti) / 1000 / 1000 << "," \
+    << "m:" << static_cast<double>(td.tm) / 1000 / 1000 << ")";
     this->result = output.str();
     return ;
 }
 
 
-double	PmergeMe::time_diff(void)
+long	PmergeMe::time_diff(void)
 {
 	static struct timespec	p;
 	struct timespec			n;
-	double			        sec;
+	long			        sec;
 
 	clock_gettime(CLOCK_REALTIME, &n);
-	sec = static_cast<double>(n.tv_sec - p.tv_sec) * (1000 * 1000);
-	sec += static_cast<double>(n.tv_nsec - p.tv_nsec) / (1000 * 1000);
+	sec = static_cast<double>(n.tv_sec - p.tv_sec) * (1000 * 1000 * 1000);
+	sec += static_cast<double>(n.tv_nsec - p.tv_nsec);
 	p = n;
 	return (sec);
 }
@@ -72,3 +75,4 @@ std::string PmergeMe::get_result(){return (this->result);}
 
 
 PmergeMe::~PmergeMe(){}
+PmergeMe::time::s_time():ti(0), tm(0){}
