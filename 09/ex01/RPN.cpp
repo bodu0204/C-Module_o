@@ -2,11 +2,11 @@
 
 RPN::RPN():answer(""),err(false){}
 RPN::RPN(std::string str):answer(""),err(false){this->calculate(str);}
-RPN::RPN(RPN const &dest){*this = dest;}
-RPN const& RPN::operator=(RPN const&dest)
+RPN::RPN(RPN const &src){*this = src;}
+RPN const& RPN::operator=(RPN const&src)
 {
-    this->answer = dest.answer;
-    this->err = dest.err;
+    this->answer = src.answer;
+    this->err = src.err;
     return(*this);
 }
 

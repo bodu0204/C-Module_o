@@ -97,13 +97,13 @@ BitcoinExchange::BitcoinExchange(std::string filename){
     f.close();
 }
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &dest){
-    *this = dest;
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &src){
+    *this = src;
 }
 
 
-BitcoinExchange const & BitcoinExchange::operator=(const BitcoinExchange & dest){
-    this->database = dest.database;
+BitcoinExchange const & BitcoinExchange::operator=(const BitcoinExchange & src){
+    this->database = src.database;
     return (*this);
 }
 
