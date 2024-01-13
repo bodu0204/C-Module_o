@@ -12,6 +12,7 @@ int main() {
     i->makeSound(); //will output the cat sound!
     j->makeSound();
     meta->makeSound();
+    std::cout << "=============================================" << std::endl;
     const Animal& mmeta = *meta;
     const Animal& jj = *j;
     const Animal& ii = *i;
@@ -24,6 +25,7 @@ int main() {
     delete meta;
     delete j;
     delete i;
+    std::cout << "=============================================" << std::endl;
     Animal A("some-type");
     Cat C;
     Dog D;
